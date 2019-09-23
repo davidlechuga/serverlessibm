@@ -1,9 +1,9 @@
 /**
- * Web application
+ * App
  */
-const apiUrl = 'https://service.us.apiconnect.ibmcloud.com/gws/apigateway/api/CHANGEME/guestbook';
+const apiUrl = 'https://1c9a0fa7.eu-de.apiconnect.appdomain.cloud/guestbook';
 const guestbook = {
-  // retrieve the existing guestbook entries
+  // recupera las entradas existentes del registro de visitas
   get() {
     return $.ajax({
       type: 'GET',
@@ -11,7 +11,7 @@ const guestbook = {
       dataType: 'json'
     });
   },
-  // add a single guestbood entry
+  // agrega un registro
   add(name, email, comment) {
     console.log('Sending', name, email, comment)
     return $.ajax({
@@ -36,27 +36,26 @@ const guestbook = {
     entriesTemplate = Handlebars.compile($('#entries-template').html());
   }
 
-  // retrieve entries and update the UI
+  // recupera entradas y actualiza la UI
   function loadEntries() {
     console.log('Loading entries...');
-    $('#entries').html('Loading entries...');
+    $('#entries').html('Recuperando entradas...');
     guestbook.get().done(function(result) {
       if (!result.entries) {
         return;
       }
-
       const context = {
         entries: result.entries
       }
       $('#entries').html(entriesTemplate(context));
     }).error(function(error) {
-      $('#entries').html('No entries');
+      $('#entries').html('Sin entradas');
       console.log(error);
     });
   }
 
-  // intercept the click on the submit button, add the guestbook entry and
-  // reload entries on success
+  // intercepta el click del boton enviar, agrega la 
+  // entrada y recarga en caso de exito
   $(document).on('submit', '#addEntry', function(e) {
     e.preventDefault();
 
@@ -65,7 +64,7 @@ const guestbook = {
       $('#email').val().trim(),
       $('#comment').val().trim()
     ).done(function(result) {
-      // reload entries
+      // recarga las entradas
       loadEntries();
     }).error(function(error) {
       console.log(error);

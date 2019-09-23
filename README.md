@@ -1,9 +1,9 @@
-# A serverless guestbook web application and API built with Cloud Functions
+# Una aplicación web sin servidor de registro de visitas y un API  construida con Cloud Functions
 
-The application is a simple guestbook website where users can post messages. It demonstrates how to build a serverless web application where static content is hosted in a storage bucket (here it uses GitHub Pages) and the backend is implemented with Cloud Functions. API Gateway is used to expose the Cloud Functions for the web user interface.
+Esta aplicacion simula un registro web donde los usuarios pueden postear mensages. Muestra como crear una aplicacion web sin servidor donde el contenido statico es almacenados en buckets (Github Pages o CF)  y el backend implementa simplemente Funciones con el servicio de Cloud Functions. El servicio de API Gateway es utilizado para publicar Cloud Functions y sea utilizado por la UI.
 
-Refer to [this tutorial](https://console.bluemix.net/docs/tutorials/serverless-api-webapp.html) for instructions.
+Clase de Kodemia que utiliza[este tutorial](https://console.bluemix.net/docs/tutorials/serverless-api-webapp.html) for instructions.
 
 ## License
 
-See [License.txt](License.txt) for license information.
+Vease [License.txt](License.txt) para la informacion de la licencia.
