@@ -1,7 +1,7 @@
 /**
  * App
  */
-const apiUrl = 'https://1c9a0fa7.eu-de.apiconnect.appdomain.cloud/guestbook';
+const apiUrl = 'https://d318cff7.us-south.apiconnect.appdomain.cloud/registro';
 const guestbook = {
   // recupera las entradas existentes del registro de visitas
   get() {
@@ -17,7 +17,7 @@ const guestbook = {
     return $.ajax({
       type: 'PUT',
       url: `${apiUrl}/entries`,
-      contentType: 'application/json; charset=utf-8',
+      contentType: 'application/json; charset=utf-8', 
       data: JSON.stringify({
         name,
         email,

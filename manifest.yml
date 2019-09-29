@@ -1,0 +1,5 @@
+applications:
+- buildpack: staticfile_buildpack
+  name: Kodemia-david
+  memory: 64M
+  stack: cflinuxfs3
